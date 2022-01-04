@@ -11,7 +11,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     // logg concern -- log start and end details
 
     @Override
-    @Transactional
     public Employee getEmployeeById(long id) {
         System.out.println("get employee by id = " + id);
         Employee employee = new Employee(1, "Dummy");
