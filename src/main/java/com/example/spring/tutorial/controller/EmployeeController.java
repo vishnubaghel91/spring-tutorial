@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController ()
 @RequestMapping(path = "/employees")
 public class EmployeeController {
@@ -25,5 +27,13 @@ public class EmployeeController {
         Employee emp = employeeService.saveEmployee(employee);
         return ResponseEntity.ok(emp);
     }
+
+    @GetMapping(path ="")
+    public ResponseEntity<List<Employee>> getAllEmployee(){
+         List<Employee> emp = employeeService.getAllEmployees();
+         return ResponseEntity.ok(emp);
+    }
+
+    //@PutMapping(path ="/")
     
 }
